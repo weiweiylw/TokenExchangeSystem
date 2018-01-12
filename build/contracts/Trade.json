@@ -1,0 +1,1298 @@
+{
+  "contractName": "Trade",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "pricingModelAddr",
+          "type": "address"
+        },
+        {
+          "name": "sourceToken",
+          "type": "address"
+        },
+        {
+          "name": "sourceAmount",
+          "type": "uint256"
+        },
+        {
+          "name": "destToken",
+          "type": "address"
+        },
+        {
+          "name": "destAddress",
+          "type": "address"
+        }
+      ],
+      "name": "doTrade",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "pricingModelAddr",
+          "type": "address"
+        },
+        {
+          "name": "source",
+          "type": "address"
+        },
+        {
+          "name": "dest",
+          "type": "address"
+        }
+      ],
+      "name": "getConversionRate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "origin",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "source",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "sourceAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "destToken",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "destAmount",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "destAddress",
+          "type": "address"
+        }
+      ],
+      "name": "DoTrade",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6060604052341561000f57600080fd5b6102ef8061001e6000396000f30060606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638674f92014610051578063ff47b5a614610104575b600080fd5b341561005c57600080fd5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061018f565b6040518082815260200191505060405180910390f35b341561010f57600080fd5b610179600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101c1565b6040518082815260200191505060405180910390f35b600080600061019f8888876101c1565b91506103e88683028115156101b057fe5b049050809250505095945050505050565b6000808490508073ffffffffffffffffffffffffffffffffffffffff1663379b87ea85856000604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050602060405180830381600087803b151561029e57600080fd5b6102c65a03f115156102af57600080fd5b5050506040518051905091505093925050505600a165627a7a7230582059ab53937eefb3b672c86da7d452fa33973ce57765346221845acb34517f1af20029",
+  "deployedBytecode": "0x60606040526004361061004c576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff1680638674f92014610051578063ff47b5a614610104575b600080fd5b341561005c57600080fd5b6100ee600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803590602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190505061018f565b6040518082815260200191505060405180910390f35b341561010f57600080fd5b610179600480803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff1690602001909190803573ffffffffffffffffffffffffffffffffffffffff169060200190919050506101c1565b6040518082815260200191505060405180910390f35b600080600061019f8888876101c1565b91506103e88683028115156101b057fe5b049050809250505095945050505050565b6000808490508073ffffffffffffffffffffffffffffffffffffffff1663379b87ea85856000604051602001526040518363ffffffff167c0100000000000000000000000000000000000000000000000000000000028152600401808373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020018273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200192505050602060405180830381600087803b151561029e57600080fd5b6102c65a03f115156102af57600080fd5b5050506040518051905091505093925050505600a165627a7a7230582059ab53937eefb3b672c86da7d452fa33973ce57765346221845acb34517f1af20029",
+  "sourceMap": "142:1381:7:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "142:1381:7:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;878:640;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;351:244;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;878:640;1020:7;1042:22;1137:18;1067:59;1085:16;1103:11;1116:9;1067:17;:59::i;:::-;1042:84;;194:5;1176:12;1159:14;:29;1158:43;;;;;;;;1137:64;;1221:10;1214:17;;878:640;;;;;;;;;:::o;351:244::-;466:7;486:16;518;486:49;;553:12;:20;;;574:6;582:4;553:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;546:41;;351:244;;;;;;:::o",
+  "source": "pragma solidity ^0.4.8;\r\n\r\nimport './IERC20Token.sol';\r\nimport './PricingModel.sol';\r\n\r\n/// @title Trade contract\r\n/// @author David Young\r\n\r\ncontract Trade {\r\n\r\n    uint  constant PRECISION = (10**3);\r\n\r\n    event DoTrade( address indexed origin, address source, uint sourceAmount, address destToken, uint destAmount, address destAddress );\r\n\r\n\r\n    function getConversionRate(address pricingModelAddr, IERC20Token source, IERC20Token dest) public constant returns(uint256) {\r\n        var pricingModel = PricingModel(pricingModelAddr);\r\n        return pricingModel.getRate(source, dest);\r\n    }\r\n\r\n    /// @dev do a trade\r\n    /// @param sourceToken Source token\r\n    /// @param sourceAmount Amount of source token\r\n    /// @param destToken Destination token\r\n    /// @param destAddress Destination address to send tokens to\r\n    /// @return true iff trade is succesful\r\n\r\n    function doTrade(address pricingModelAddr, IERC20Token sourceToken, uint256 sourceAmount, IERC20Token destToken, address destAddress) returns(uint256) {\r\n\r\n        uint256 conversionRate = getConversionRate(pricingModelAddr, sourceToken, destToken);\r\n        uint256 destAmount = (conversionRate * sourceAmount) / PRECISION;\r\n\r\n        return destAmount;\r\n        \r\n        //sourceToken.transferFrom(msg.sender, destAddress, sourceAmount);\r\n        //destToken.transferFrom(destAddress, msg.sender, destAmount); \r\n\r\n        //DoTrade(tx.origin, sourceToken, sourceAmount, destToken, destAmount, destAddress);\r\n        //return true;\r\n    }\r\n\r\n}",
+  "sourcePath": "/home/david/eth_project/my_project_npm/contracts/Trade.sol",
+  "ast": {
+    "attributes": {
+      "absolutePath": "/home/david/eth_project/my_project_npm/contracts/Trade.sol",
+      "exportedSymbols": {
+        "Trade": [
+          1576
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.4",
+            ".8"
+          ]
+        },
+        "id": 1495,
+        "name": "PragmaDirective",
+        "src": "0:23:7"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 846,
+          "absolutePath": "/home/david/eth_project/my_project_npm/contracts/IERC20Token.sol",
+          "file": "./IERC20Token.sol",
+          "scope": 1577,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 1496,
+        "name": "ImportDirective",
+        "src": "27:27:7"
+      },
+      {
+        "attributes": {
+          "SourceUnit": 1165,
+          "absolutePath": "/home/david/eth_project/my_project_npm/contracts/PricingModel.sol",
+          "file": "./PricingModel.sol",
+          "scope": 1577,
+          "symbolAliases": [
+            null
+          ],
+          "unitAlias": ""
+        },
+        "id": 1497,
+        "name": "ImportDirective",
+        "src": "56:28:7"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "@title Trade contract\r\n @author David Young\r",
+          "fullyImplemented": true,
+          "linearizedBaseContracts": [
+            1576
+          ],
+          "name": "Trade",
+          "scope": 1577
+        },
+        "children": [
+          {
+            "attributes": {
+              "constant": true,
+              "name": "PRECISION",
+              "scope": 1576,
+              "stateVariable": true,
+              "storageLocation": "default",
+              "type": "uint256",
+              "visibility": "internal"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "name": "uint",
+                  "type": "uint256"
+                },
+                "id": 1498,
+                "name": "ElementaryTypeName",
+                "src": "166:4:7"
+              },
+              {
+                "attributes": {
+                  "argumentTypes": null,
+                  "isConstant": false,
+                  "isInlineArray": false,
+                  "isLValue": false,
+                  "isPure": true,
+                  "lValueRequested": false,
+                  "type": "int_const 1000"
+                },
+                "children": [
+                  {
+                    "attributes": {
+                      "argumentTypes": null,
+                      "commonType": {
+                        "typeIdentifier": "t_rational_1000_by_1",
+                        "typeString": "int_const 1000"
+                      },
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "operator": "**",
+                      "type": "int_const 1000"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "3130",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "number",
+                          "type": "int_const 10",
+                          "value": "10"
+                        },
+                        "id": 1499,
+                        "name": "Literal",
+                        "src": "194:2:7"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "hexvalue": "33",
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": true,
+                          "lValueRequested": false,
+                          "subdenomination": null,
+                          "token": "number",
+                          "type": "int_const 3",
+                          "value": "3"
+                        },
+                        "id": 1500,
+                        "name": "Literal",
+                        "src": "198:1:7"
+                      }
+                    ],
+                    "id": 1501,
+                    "name": "BinaryOperation",
+                    "src": "194:5:7"
+                  }
+                ],
+                "id": 1502,
+                "name": "TupleExpression",
+                "src": "193:7:7"
+              }
+            ],
+            "id": 1503,
+            "name": "VariableDeclaration",
+            "src": "166:34:7"
+          },
+          {
+            "attributes": {
+              "anonymous": false,
+              "name": "DoTrade"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": true,
+                      "name": "origin",
+                      "scope": 1517,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1504,
+                        "name": "ElementaryTypeName",
+                        "src": "224:7:7"
+                      }
+                    ],
+                    "id": 1505,
+                    "name": "VariableDeclaration",
+                    "src": "224:22:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "source",
+                      "scope": 1517,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1506,
+                        "name": "ElementaryTypeName",
+                        "src": "248:7:7"
+                      }
+                    ],
+                    "id": 1507,
+                    "name": "VariableDeclaration",
+                    "src": "248:14:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "sourceAmount",
+                      "scope": 1517,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 1508,
+                        "name": "ElementaryTypeName",
+                        "src": "264:4:7"
+                      }
+                    ],
+                    "id": 1509,
+                    "name": "VariableDeclaration",
+                    "src": "264:17:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "destToken",
+                      "scope": 1517,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1510,
+                        "name": "ElementaryTypeName",
+                        "src": "283:7:7"
+                      }
+                    ],
+                    "id": 1511,
+                    "name": "VariableDeclaration",
+                    "src": "283:17:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "destAmount",
+                      "scope": 1517,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint",
+                          "type": "uint256"
+                        },
+                        "id": 1512,
+                        "name": "ElementaryTypeName",
+                        "src": "302:4:7"
+                      }
+                    ],
+                    "id": 1513,
+                    "name": "VariableDeclaration",
+                    "src": "302:15:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "indexed": false,
+                      "name": "destAddress",
+                      "scope": 1517,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1514,
+                        "name": "ElementaryTypeName",
+                        "src": "319:7:7"
+                      }
+                    ],
+                    "id": 1515,
+                    "name": "VariableDeclaration",
+                    "src": "319:19:7"
+                  }
+                ],
+                "id": 1516,
+                "name": "ParameterList",
+                "src": "222:118:7"
+              }
+            ],
+            "id": 1517,
+            "name": "EventDefinition",
+            "src": "209:132:7"
+          },
+          {
+            "attributes": {
+              "constant": true,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "getConversionRate",
+              "payable": false,
+              "scope": 1576,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "pricingModelAddr",
+                      "scope": 1540,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1518,
+                        "name": "ElementaryTypeName",
+                        "src": "378:7:7"
+                      }
+                    ],
+                    "id": 1519,
+                    "name": "VariableDeclaration",
+                    "src": "378:24:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "source",
+                      "scope": 1540,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract IERC20Token",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "IERC20Token",
+                          "referencedDeclaration": 845,
+                          "type": "contract IERC20Token"
+                        },
+                        "id": 1520,
+                        "name": "UserDefinedTypeName",
+                        "src": "404:11:7"
+                      }
+                    ],
+                    "id": 1521,
+                    "name": "VariableDeclaration",
+                    "src": "404:18:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "dest",
+                      "scope": 1540,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract IERC20Token",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "IERC20Token",
+                          "referencedDeclaration": 845,
+                          "type": "contract IERC20Token"
+                        },
+                        "id": 1522,
+                        "name": "UserDefinedTypeName",
+                        "src": "424:11:7"
+                      }
+                    ],
+                    "id": 1523,
+                    "name": "VariableDeclaration",
+                    "src": "424:16:7"
+                  }
+                ],
+                "id": 1524,
+                "name": "ParameterList",
+                "src": "377:64:7"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1540,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1525,
+                        "name": "ElementaryTypeName",
+                        "src": "466:7:7"
+                      }
+                    ],
+                    "id": 1526,
+                    "name": "VariableDeclaration",
+                    "src": "466:7:7"
+                  }
+                ],
+                "id": 1527,
+                "name": "ParameterList",
+                "src": "465:9:7"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        1528
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "pricingModel",
+                          "scope": 1540,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "contract PricingModel",
+                          "typeName": null,
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [],
+                        "id": 1528,
+                        "name": "VariableDeclaration",
+                        "src": "486:16:7"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "contract PricingModel",
+                          "type_conversion": true
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1164,
+                              "type": "type(contract PricingModel)",
+                              "value": "PricingModel"
+                            },
+                            "id": 1529,
+                            "name": "Identifier",
+                            "src": "505:12:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1519,
+                              "type": "address",
+                              "value": "pricingModelAddr"
+                            },
+                            "id": 1530,
+                            "name": "Identifier",
+                            "src": "518:16:7"
+                          }
+                        ],
+                        "id": 1531,
+                        "name": "FunctionCall",
+                        "src": "505:30:7"
+                      }
+                    ],
+                    "id": 1532,
+                    "name": "VariableDeclarationStatement",
+                    "src": "486:49:7"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 1527
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_contract$_IERC20Token_$845",
+                                  "typeString": "contract IERC20Token"
+                                },
+                                {
+                                  "typeIdentifier": "t_contract$_IERC20Token_$845",
+                                  "typeString": "contract IERC20Token"
+                                }
+                              ],
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "member_name": "getRate",
+                              "referencedDeclaration": 1008,
+                              "type": "function (contract IERC20Token,contract IERC20Token) view external returns (uint256)"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "overloadedDeclarations": [
+                                    null
+                                  ],
+                                  "referencedDeclaration": 1528,
+                                  "type": "contract PricingModel",
+                                  "value": "pricingModel"
+                                },
+                                "id": 1533,
+                                "name": "Identifier",
+                                "src": "553:12:7"
+                              }
+                            ],
+                            "id": 1534,
+                            "name": "MemberAccess",
+                            "src": "553:20:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1521,
+                              "type": "contract IERC20Token",
+                              "value": "source"
+                            },
+                            "id": 1535,
+                            "name": "Identifier",
+                            "src": "574:6:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1523,
+                              "type": "contract IERC20Token",
+                              "value": "dest"
+                            },
+                            "id": 1536,
+                            "name": "Identifier",
+                            "src": "582:4:7"
+                          }
+                        ],
+                        "id": 1537,
+                        "name": "FunctionCall",
+                        "src": "553:34:7"
+                      }
+                    ],
+                    "id": 1538,
+                    "name": "Return",
+                    "src": "546:41:7"
+                  }
+                ],
+                "id": 1539,
+                "name": "Block",
+                "src": "475:120:7"
+              }
+            ],
+            "id": 1540,
+            "name": "FunctionDefinition",
+            "src": "351:244:7"
+          },
+          {
+            "attributes": {
+              "constant": false,
+              "implemented": true,
+              "isConstructor": false,
+              "modifiers": [
+                null
+              ],
+              "name": "doTrade",
+              "payable": false,
+              "scope": 1576,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "pricingModelAddr",
+                      "scope": 1575,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1541,
+                        "name": "ElementaryTypeName",
+                        "src": "895:7:7"
+                      }
+                    ],
+                    "id": 1542,
+                    "name": "VariableDeclaration",
+                    "src": "895:24:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "sourceToken",
+                      "scope": 1575,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract IERC20Token",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "IERC20Token",
+                          "referencedDeclaration": 845,
+                          "type": "contract IERC20Token"
+                        },
+                        "id": 1543,
+                        "name": "UserDefinedTypeName",
+                        "src": "921:11:7"
+                      }
+                    ],
+                    "id": 1544,
+                    "name": "VariableDeclaration",
+                    "src": "921:23:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "sourceAmount",
+                      "scope": 1575,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1545,
+                        "name": "ElementaryTypeName",
+                        "src": "946:7:7"
+                      }
+                    ],
+                    "id": 1546,
+                    "name": "VariableDeclaration",
+                    "src": "946:20:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "destToken",
+                      "scope": 1575,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "contract IERC20Token",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "contractScope": null,
+                          "name": "IERC20Token",
+                          "referencedDeclaration": 845,
+                          "type": "contract IERC20Token"
+                        },
+                        "id": 1547,
+                        "name": "UserDefinedTypeName",
+                        "src": "968:11:7"
+                      }
+                    ],
+                    "id": 1548,
+                    "name": "VariableDeclaration",
+                    "src": "968:21:7"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "destAddress",
+                      "scope": 1575,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "type": "address"
+                        },
+                        "id": 1549,
+                        "name": "ElementaryTypeName",
+                        "src": "991:7:7"
+                      }
+                    ],
+                    "id": 1550,
+                    "name": "VariableDeclaration",
+                    "src": "991:19:7"
+                  }
+                ],
+                "id": 1551,
+                "name": "ParameterList",
+                "src": "894:117:7"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 1575,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 1552,
+                        "name": "ElementaryTypeName",
+                        "src": "1020:7:7"
+                      }
+                    ],
+                    "id": 1553,
+                    "name": "VariableDeclaration",
+                    "src": "1020:7:7"
+                  }
+                ],
+                "id": 1554,
+                "name": "ParameterList",
+                "src": "1019:9:7"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "assignments": [
+                        1556
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "conversionRate",
+                          "scope": 1575,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 1555,
+                            "name": "ElementaryTypeName",
+                            "src": "1042:7:7"
+                          }
+                        ],
+                        "id": 1556,
+                        "name": "VariableDeclaration",
+                        "src": "1042:22:7"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "isStructConstructorCall": false,
+                          "lValueRequested": false,
+                          "names": [
+                            null
+                          ],
+                          "type": "uint256",
+                          "type_conversion": false
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": [
+                                {
+                                  "typeIdentifier": "t_address",
+                                  "typeString": "address"
+                                },
+                                {
+                                  "typeIdentifier": "t_contract$_IERC20Token_$845",
+                                  "typeString": "contract IERC20Token"
+                                },
+                                {
+                                  "typeIdentifier": "t_contract$_IERC20Token_$845",
+                                  "typeString": "contract IERC20Token"
+                                }
+                              ],
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1540,
+                              "type": "function (address,contract IERC20Token,contract IERC20Token) view returns (uint256)",
+                              "value": "getConversionRate"
+                            },
+                            "id": 1557,
+                            "name": "Identifier",
+                            "src": "1067:17:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1542,
+                              "type": "address",
+                              "value": "pricingModelAddr"
+                            },
+                            "id": 1558,
+                            "name": "Identifier",
+                            "src": "1085:16:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1544,
+                              "type": "contract IERC20Token",
+                              "value": "sourceToken"
+                            },
+                            "id": 1559,
+                            "name": "Identifier",
+                            "src": "1103:11:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1548,
+                              "type": "contract IERC20Token",
+                              "value": "destToken"
+                            },
+                            "id": 1560,
+                            "name": "Identifier",
+                            "src": "1116:9:7"
+                          }
+                        ],
+                        "id": 1561,
+                        "name": "FunctionCall",
+                        "src": "1067:59:7"
+                      }
+                    ],
+                    "id": 1562,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1042:84:7"
+                  },
+                  {
+                    "attributes": {
+                      "assignments": [
+                        1564
+                      ]
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "constant": false,
+                          "name": "destAmount",
+                          "scope": 1575,
+                          "stateVariable": false,
+                          "storageLocation": "default",
+                          "type": "uint256",
+                          "value": null,
+                          "visibility": "internal"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "uint256",
+                              "type": "uint256"
+                            },
+                            "id": 1563,
+                            "name": "ElementaryTypeName",
+                            "src": "1137:7:7"
+                          }
+                        ],
+                        "id": 1564,
+                        "name": "VariableDeclaration",
+                        "src": "1137:18:7"
+                      },
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "commonType": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          },
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "operator": "/",
+                          "type": "uint256"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "isConstant": false,
+                              "isInlineArray": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "type": "uint256"
+                            },
+                            "children": [
+                              {
+                                "attributes": {
+                                  "argumentTypes": null,
+                                  "commonType": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                  },
+                                  "isConstant": false,
+                                  "isLValue": false,
+                                  "isPure": false,
+                                  "lValueRequested": false,
+                                  "operator": "*",
+                                  "type": "uint256"
+                                },
+                                "children": [
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1556,
+                                      "type": "uint256",
+                                      "value": "conversionRate"
+                                    },
+                                    "id": 1565,
+                                    "name": "Identifier",
+                                    "src": "1159:14:7"
+                                  },
+                                  {
+                                    "attributes": {
+                                      "argumentTypes": null,
+                                      "overloadedDeclarations": [
+                                        null
+                                      ],
+                                      "referencedDeclaration": 1546,
+                                      "type": "uint256",
+                                      "value": "sourceAmount"
+                                    },
+                                    "id": 1566,
+                                    "name": "Identifier",
+                                    "src": "1176:12:7"
+                                  }
+                                ],
+                                "id": 1567,
+                                "name": "BinaryOperation",
+                                "src": "1159:29:7"
+                              }
+                            ],
+                            "id": 1568,
+                            "name": "TupleExpression",
+                            "src": "1158:31:7"
+                          },
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 1503,
+                              "type": "uint256",
+                              "value": "PRECISION"
+                            },
+                            "id": 1569,
+                            "name": "Identifier",
+                            "src": "1192:9:7"
+                          }
+                        ],
+                        "id": 1570,
+                        "name": "BinaryOperation",
+                        "src": "1158:43:7"
+                      }
+                    ],
+                    "id": 1571,
+                    "name": "VariableDeclarationStatement",
+                    "src": "1137:64:7"
+                  },
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 1554
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "overloadedDeclarations": [
+                            null
+                          ],
+                          "referencedDeclaration": 1564,
+                          "type": "uint256",
+                          "value": "destAmount"
+                        },
+                        "id": 1572,
+                        "name": "Identifier",
+                        "src": "1221:10:7"
+                      }
+                    ],
+                    "id": 1573,
+                    "name": "Return",
+                    "src": "1214:17:7"
+                  }
+                ],
+                "id": 1574,
+                "name": "Block",
+                "src": "1029:489:7"
+              }
+            ],
+            "id": 1575,
+            "name": "FunctionDefinition",
+            "src": "878:640:7"
+          }
+        ],
+        "id": 1576,
+        "name": "ContractDefinition",
+        "src": "142:1381:7"
+      }
+    ],
+    "id": 1577,
+    "name": "SourceUnit",
+    "src": "0:1523:7"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.18+commit.9cf6e910.Emscripten.clang"
+  },
+  "networks": {
+    "1513867495368": {
+      "events": {},
+      "links": {},
+      "address": "0x68576f5cb658cd98142150aa3a518b6ff556b474"
+    }
+  },
+  "schemaVersion": "1.0.1",
+  "updatedAt": "2017-12-21T14:45:43.350Z"
+}
